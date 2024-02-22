@@ -1,0 +1,51 @@
+<%- include('partials/header.ejs'); -%>
+
+<section class="headerTitle">
+    <div class="container">
+        <img class='bg' src="images/bg-transparent.jpg" alt='handwritten text'>
+        <img class='middle' src="images/middle.png" alt='background'>
+        <img class='top' src="images/top.png" alt='background'>
+        <div class="titleText">
+        <h1 class="title">
+            Books <br> I've read
+        </h1>
+        </div>
+    </div>
+</section>
+<section class="booksSection">
+    <fieldset class="booksInfo">
+        <legend class="sort">Sort by: 
+            <form class="sorting" action='/sort' method='post'>
+                <select name="sort" class="rateOpt">
+                    <option value="ratingAsc">By rating from high to low</option>
+                    <option value="ratingDesc">By rating from low to high</option>
+                    <option value="alphabet">By alphabet</option>
+                    <option value="date_old">By date from old to new</option>
+                    <option value="date_new">By date from new to old</option>
+                </select>
+                <button class='btn' type="submit"> ✓</button>
+        </form></legend>
+    <div class="containerBooks">
+        <% for(let book of books) {%>
+        <div class="bookCard">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                <div class="cover"> 
+                    <img class='bookCover' src="https://covers.openlibrary.org/b/isbn/<%= book.isbn %>-L.jpg" alt="Book cover">
+                </div>
+                <p class="rating"><%= book.rating %>/10</p>
+                <h2><%= book.title %></h2>
+                <p class="author"><%= book.author %></p>
+                <p class="date">Added: <%= book.added_date.toLocaleDateString() %></p>
+                </div>
+                <div class="flip-card-back">
+                <p class="description"><%= book.description %></p>
+                </div>
+            </div>
+        </div>
+        <% } %>
+    </div>
+</fieldset>
+</section>
+
+<%- include('partials/footer.ejs'); -%>

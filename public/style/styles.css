@@ -1,0 +1,259 @@
+body {
+    margin: 0;
+    background-color: #EDE3DA;
+}
+
+.navBar {
+    background-color: #C3986A;
+    height: auto;
+    font-family: "Yeseva One", serif;  
+    font-weight: 400;
+    font-style: normal;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.logo, .about{
+    color: #ECE2D8;
+    text-decoration: none;
+    padding: 10px 10px;
+}
+
+.about {
+    text-align: right;
+}
+
+.about:hover, .logo:hover {
+    background-color: #ECE2D8;
+    color: #C3986A;
+}
+
+.container{
+    background-color: #EDE3DA;
+    height: 500px;
+    max-height: 500px;
+    margin: 0;
+    width: 100%;
+    display: grid;
+
+}
+
+.bg, .titleText, .middle, .top{
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+.bg {
+    height: 500px;
+    width: 100%;
+    opacity: 0.4;
+    object-fit: cover;
+}
+
+.titleText {
+    margin: auto;
+    opacity: 1;
+    width: 50%;
+    z-index: 1;
+}
+
+.title {
+    text-align: center;
+    font-family: "Yeseva One", serif;  
+    font-size: 4rem;
+    font-weight: 800;
+    font-style: normal;
+    color: #605048;
+    text-shadow: 5px 5px rgb(233, 201, 185);
+    transform: rotate(-10deg);
+}
+
+.middle, .top {
+    margin: auto;
+    width: 30rem;
+    height: 30rem;
+    z-index: 1;
+}
+
+
+@media screen and (max-width: 450px) {
+    .middle, .top {
+        width: 100%;
+    }
+}
+
+.containerBooks{
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.bookCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10%;
+    background-color: #C3986A;
+    height: 500px;
+    width: 250px;
+    padding: 3px;
+    text-align: center;
+    font-family: "Yeseva One", serif;  
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: normal;
+    border-radius: 6px;
+    border: 1px solid #605048;
+    perspective: 1000px;
+}
+
+@media screen and (max-width: 1024px) {
+    .containerBooks{
+       grid-template-columns: 1fr 1fr 1fr; 
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .containerBooks{
+       display: flex;
+       flex-direction: column; 
+       justify-content: center;
+       align-items: center;
+    }
+
+    .bookCard {
+        margin: 10px;
+    }
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+.bookCard:hover .flip-card-inner {
+   transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    text-align: center;
+    font-family: "Yeseva One", serif;  
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.booksInfo {
+    border: 0;
+    margin: 2% 0 0 0;
+    padding: 0;
+    width: 100%;
+}
+
+.sort {
+    padding-left: 10px;
+    font-family: "Yeseva One", serif;  
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: normal;
+    color: #605048;
+    display: inline-block;
+}
+
+form {
+    display: inline-block;
+}
+
+.rateOpt {
+    background-color: #ECE2D8;
+    font-family: "Yeseva One", serif;  
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: normal;
+    color: #605048;
+}
+
+footer {
+    background-color: #C3986A;
+    height: 30px;
+    font-family: "Yeseva One", serif;  
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: normal;
+    color: #ECE2D8;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.cover{
+    height: 60%;
+    width: 85%;
+    display: inline-block;
+    border-radius: 6px;
+}
+
+.bookCover {
+    object-fit: fill;
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+}
+
+.description {
+    margin: 0 auto;
+    padding: 50% 5%;
+}
+
+.btn {
+    background-color: #ECE2D8;
+    color: green;
+    border: 1px solid green;
+    border-radius: 5px; 
+    cursor: pointer; 
+    outline: none; 
+    transition: 0.3s all; 
+    padding: 2px 7px;
+}
+
+.btn:hover {
+    background-color: rgb(132, 168, 132);
+}
+
+.aboutContainer {
+    display: flex;
+    width: 50%;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 13%;
+}
+
+.aboutText {
+    font-family: "Yeseva One", serif;  
+    font-size: 2rem;
+    font-weight: 400;
+    font-style: normal;
+    color: #605048;
+}
+
+@media screen and (max-width: 700px) {
+    .aboutText {
+        font-size: large;
+    }
+}
+
+
