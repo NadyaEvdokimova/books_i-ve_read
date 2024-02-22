@@ -4,7 +4,7 @@ import pg from 'pg';
 
 const app = express();
 const port = 3000;
-const elephantsql = 'elephanturl';
+const elephantsql = process.env.elephantsql;
 
 
 app.use(bodyParser.urlencoded({ extended: true}));
